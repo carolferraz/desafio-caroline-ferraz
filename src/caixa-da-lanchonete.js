@@ -1,6 +1,6 @@
 class CaixaDaLanchonete {
-  metodosDePagamentoAceitos = ["dinheiro", "debito", "credito"];
-  menu = [
+  static metodosDePagamentoAceitos = ["dinheiro", "debito", "credito"];
+  static menu = [
     {
       codigo: "cafe",
       descricao: "Café",
