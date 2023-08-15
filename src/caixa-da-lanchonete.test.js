@@ -35,6 +35,7 @@ describe('CaixaDaLanchonete', () => {
 
     test.each([
         ['com quantidade zero', 'dinheiro', 'Quantidade inválida!', ['cafe,0']],
+        ['com quantidade zero', 'dinheiro', 'Quantidade inválida!', ['cafe']],
         ['com um valor', 'credito', 'Item inválido!', ['1']],
         ['com código inexistente', 'debito', 'Item inválido!', ['pizza, 1']],
         ['com forma de pagamento inválida', 'especie', 'Forma de pagamento inválida!', ['cafe, 1']],
@@ -42,6 +43,8 @@ describe('CaixaDaLanchonete', () => {
         validaTeste(formaDePagamento, resultadoEsperado, itens));
 
     test.each([
+        ['chantily', 'dinheiro', 'Item extra não pode ser pedido sem o principal', ['chantily,2']],
+        ['queijo', 'credito', 'Item extra não pode ser pedido sem o principal', ['queijo,3']],
         ['chantily', 'dinheiro', 'Item extra não pode ser pedido sem o principal', ['chantily,1']],
         ['queijo', 'credito', 'Item extra não pode ser pedido sem o principal', ['queijo,1']],
         ['chantily com outro item', 'credito', 'Item extra não pode ser pedido sem o principal', ['chantily,1', 'sanduiche,1']],
